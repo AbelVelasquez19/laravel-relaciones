@@ -58,6 +58,11 @@ class User extends Authenticatable
         return $this->hasMany(Video::class,'user_id','id');
     }
 
+    //Relacion uno a muchos
+    public function comments(){
+        return $this->hasMany(Comment::class,'user_id','id');
+    }
+
     //Relacion muchos a muchos
     public function roles(){
         return $this->belongsToMany('App\Models\Role');
